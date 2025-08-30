@@ -67,12 +67,6 @@ Music-Player/
 
 ---
 
-🎨 Screenshot of search result 
-
-<div align="center"> <img alt="Music Player Screenshot" src="Assets/images/music-player/website1.png" width="300"> </div>
-
----
-
 🔧 Usage
 
 Type a song name in the search input.
