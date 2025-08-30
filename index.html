@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music-player</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- GOOGLE ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      
+      <!-- SEARCH CONTAINER -->
+      <div class="search-container">
+        <input
+          type="text"
+          autocomplete="off"
+          placeholder="What do you want to play?"
+          class="search-input"
+          id="searchInput"
+        />
+        <ul class="suggestion-search" id="suggestionSearch"></ul>
+      </div>
+
+      <!-- IMAGE CONTAINER -->
+      <div class="image-container">
+        <img
+          src="Assets/images/morphine.jpg"
+          class="song-img"
+          alt="song img"
+          id="imgSong"
+        />
+      </div>
+
+      <!-- MUSIC CONTAINER -->
+      <div class="music-container">
+        <h5 class="music-info-title" id="musicInfoTitle">L'morphiniya 1</h5>
+        <h6 class="music-info-artist" id="musicInfoArtist">L'morphine</h6>
+
+        <div class="music-progress">
+          <span class="music-time" id="musicCurrentTime">00:00</span>
+          <div class="progress-bar-container" id="progressContainer">
+            <div class="progress" id="progress"></div>
+          </div>
+          <span class="music-time" id="musicOriginalTime">00:30</span>
+        </div>
+
+        <audio
+          src="Assets/Songs/morphiniya1.mp3"
+          id="songAudio"
+          style="display: none;"
+        ></audio>
+
+        <div class="music-controles">
+          <span class="material-symbols-outlined" id="replay5">replay_5</span>
+          <span class="material-symbols-outlined" id="musicPlayControl">play_arrow</span>
+          <span class="material-symbols-outlined" id="forward5">forward_5</span>
+        </div>
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
