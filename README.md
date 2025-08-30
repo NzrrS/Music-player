@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Waether app" src="Assets/images/music-player/website1.png">
+  <img alt="Waether app" src="Assets/images/music-player/website2.png">
    <h1>🎵 Music Player App</h1>
   <p>A sleek web music player with search, preview, and interactive controls.</p>
 </div>
@@ -64,6 +64,12 @@ Music-Player/
 ├─ index.html       # main HTML page
 ├─ style.css        # app styling
 └─ script.js        # app functionality
+
+---
+
+🎨 Screenshots
+<div align="center"> <img alt="Music Player Screenshot" src="Assets/images/music-player/website2.png" width="300"> </div>
+<div align="center"> <img alt="Music Player Screenshot" src="Assets/images/music-player/website1.png" width="300"> </div>
 
 ---
 
