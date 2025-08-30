@@ -67,8 +67,8 @@ Music-Player/
 
 ---
 
-🎨 Screenshots
-<div align="center"> <img alt="Music Player Screenshot" src="Assets/images/music-player/Website2.png" width="300"> </div>
+🎨 Screenshot of search result 
+
 <div align="center"> <img alt="Music Player Screenshot" src="Assets/images/music-player/website1.png" width="300"> </div>
 
 ---
