@@ -80,7 +80,7 @@ body::before {
   display: none;
   background-color: #262626;
   border-radius: 10px;
-  max-height: 300px;
+  max-height: 270px;
   overflow-y: auto;
   width: 100%;
   padding: 30px 18px 20px 18px;
