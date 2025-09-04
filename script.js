@@ -13,7 +13,6 @@ const progressContainer = document.getElementById("progressContainer");
 
 let songs = [];
 
-
 // -------------------------------
 // FETCH SONGS FROM DEEZER API
 // -------------------------------
@@ -21,7 +20,9 @@ async function fetchSong(songName) {
   try {
     // use corsproxy.io to bypass CORS restrictions
     let res = await fetch(
-      `https://corsproxy.io/?https://api.deezer.com/search?q=${encodeURIComponent(songName)}`
+      `https://corsproxy.io/?https://api.deezer.com/search?q=${encodeURIComponent(
+        songName
+      )}`
     );
 
     if (!res.ok) throw new Error("Response is not ok.");
@@ -37,7 +38,6 @@ async function fetchSong(songName) {
     songs = [];
   }
 }
-
 
 // -------------------------------
 // SEARCH INPUT EVENT
@@ -106,7 +106,6 @@ searchInput.addEventListener("input", async function () {
 
       suggestionSearch.append(li);
     });
-
   } else {
     // no results found
     suggestionSearch.innerHTML = "No result";
@@ -114,7 +113,6 @@ searchInput.addEventListener("input", async function () {
     suggestionSearch.style.fontWeight = "400";
   }
 });
-
 
 // -------------------------------
 // HIDE SUGGESTIONS WHEN CLICKING OUTSIDE
@@ -125,7 +123,6 @@ document.addEventListener("click", (e) => {
     suggestionSearch.innerHTML = "";
   }
 });
-
 
 // -------------------------------
 // UPDATE PLAYER UI
@@ -144,7 +141,6 @@ function updatePlayer(song) {
   // set background image
   document.body.style.background = `url("${song.album.cover_big}") no-repeat center center / cover`;
 }
-
 
 // -------------------------------
 // PLAY / PAUSE MUSIC
@@ -168,13 +164,12 @@ musicPlayControl.addEventListener("click", function () {
   }
 });
 
-
 // -------------------------------
 // MUSIC TIME + PROGRESS BAR
 // -------------------------------
 // update current time
 songAudio.addEventListener("timeupdate", () => {
-  let secs = Math.floor(songAudio.currentTime);
+  let secs = Math.floor(songAudio.currentTime + 1);
   if (secs < 10) secs = "0" + secs;
   musicCurrentTime.textContent = `00:${secs}`;
 
@@ -186,10 +181,9 @@ songAudio.addEventListener("timeupdate", () => {
 progressContainer.addEventListener("click", (e) => {
   const width = progressContainer.clientWidth;
   const clickX = e.offsetX;
-  const newTime = (clickX / width) * 30;  
+  const newTime = (clickX / width) * 30;
   songAudio.currentTime = newTime;
 });
-
 
 // -------------------------------
 // REPLAY / FORWARD BUTTONS
@@ -212,7 +206,6 @@ forward5.addEventListener("click", () => {
   }
 });
 
-
 // -------------------------------
 // KEYBOARD SHORTCUTS
 // -------------------------------
@@ -227,6 +220,18 @@ document.addEventListener("keydown", function (e) {
       songAudio.pause();
     } else {
       musicPlayControl.textContent = " pause ";
+      songAudio.play();
+    }
+  }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.code === "F4" || e.code === "MediaPlayPause") {
+    if (musicPlayControl.textContent === "pause") {
+      // remove extra spaces
+      musicPlayControl.textContent = "play_arrow";
+      songAudio.pause();
+    } else {
+      musicPlayControl.textContent = "pause";
       songAudio.play();
     }
   }
