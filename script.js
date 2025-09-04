@@ -209,6 +209,7 @@ forward5.addEventListener("click", () => {
 // -------------------------------
 // KEYBOARD SHORTCUTS
 // -------------------------------
+
 document.addEventListener("keydown", function (e) {
   // ignore when typing inside input/textarea
   if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
@@ -226,13 +227,19 @@ document.addEventListener("keydown", function (e) {
 });
 document.addEventListener("keydown", function (e) {
   if (e.code === "F4" || e.code === "MediaPlayPause") {
-    if (musicPlayControl.textContent === "pause") {
-      // remove extra spaces
+    if (musicPlayControl.textContent === " pause ") {
       musicPlayControl.textContent = "play_arrow";
       songAudio.pause();
     } else {
-      musicPlayControl.textContent = "pause";
+      musicPlayControl.textContent = " pause ";
       songAudio.play();
     }
   }
 });
+
+document.addEventListener('keyup',function(e){
+  if(e.code === 'Slash'){
+    searchInput.focus()
+    searchInput.textContent = ""
+  }
+})
